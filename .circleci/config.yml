@@ -16,8 +16,6 @@ jobs:
           command: "echo Hello"
   print_world:
     executor: my-executor
-    requires:
-      - print_hello
     steps:
       - run:
           name: "Say Ưorld"
@@ -29,4 +27,6 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - print_hello
-      - print_world
+      - print_world:
+        requires:
+          - print_hello

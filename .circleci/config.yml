@@ -6,7 +6,7 @@ commands:
       pipeline_id:
         type: string
     steps:
-      - run: echo "Pipeline ID: << pipeline.parameters.pipeline_id >>"
+      - run: echo Pipeline ID: << pipeline.parameters.pipeline_id >>
 
 jobs:
   my_job:

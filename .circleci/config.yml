@@ -14,12 +14,12 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: echo "world"
-    requires:
-      - print_hello
 
 workflows:
   version: 2
   welcome:
     jobs:
       - print_hello
-      - print_world
+      - print_world:
+          requires:
+            - print_hello

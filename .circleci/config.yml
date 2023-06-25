@@ -6,7 +6,7 @@ commands:
       pipeline_id:
         type: string
     steps:
-      - run: echo Pipeline ID: << pipeline.parameters.pipeline_id >>
+      - run: echo Pipeline ID: << parameters.pipeline_id >>
 
 jobs:
   my_job:
@@ -14,7 +14,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - print_pipeline_id:
-          pipeline_id: << pipeline.parameters.pipeline_id >>
+          pipeline_id: << pipeline.id >>
 
 workflows:
   version: 2

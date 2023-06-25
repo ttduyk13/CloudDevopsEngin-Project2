@@ -16,7 +16,7 @@ jobs:
           command: "echo Hello"
   print_world:
     executor: my-executor
-    require:
+    requires:
       - print_hello
     steps:
       - run:

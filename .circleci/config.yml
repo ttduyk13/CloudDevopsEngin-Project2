@@ -13,7 +13,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo "world"
+      - run: echo "world of $USER_NAME"
 
 workflows:
   version: 2

@@ -24,4 +24,5 @@ workflows:
   my_workflow:
     jobs:
       - my_job:
-          pipeline_id: ABC123
+          parameters:
+            pipeline_id: ABC123

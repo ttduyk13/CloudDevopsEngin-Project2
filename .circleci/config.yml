@@ -21,6 +21,7 @@ jobs:
           pipeline_id: << pipeline.parameters.pipeline_id >>
 
 workflows:
+  version: 2
   my_workflow:
     jobs:
       - my_job:

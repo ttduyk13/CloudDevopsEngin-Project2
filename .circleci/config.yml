@@ -1,25 +1,17 @@
 version: 2.1
 
-commands:
-  print_pipeline_id:
-    parameters:
-      pipeline_id:
-        type: string
-    steps:
-      - run: echo Pipeline ID: << parameters.pipeline_id >>
-
 jobs:
   my_job:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - print_pipeline_id:
-          pipeline_id: << pipeline.id >>
+      - run: exit 1
+      - run:
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail
 
 workflows:
-  version: 2
   my_workflow:
     jobs:
-      - my_job:
-          parameters:
-            pipeline_id: ABC123
+      - my_job
